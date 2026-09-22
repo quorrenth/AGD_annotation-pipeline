@@ -1,47 +1,73 @@
-Pipeline for plant gene functional annotation
+# Pipeline for plant gene functional annotation
 
-Install the Database
+## Install the Database
 
-Blast DB
+### Blast DB
 
-download the nr, swissprot, trembl, and arabidopsis protein to /data/share/diamond, then makedb:
+Download the nr, swissprot, trembl, and Arabidopsis protein to `/data/share/diamond`, then run:
 
+```bash
 ./diamond makedb --in uniprot_sprot.fasta -d uniprot_sprot
 ./diamond makedb --in uniprot_trembl.fasta -d uniprot_trembl
 ./diamond makedb --in Araport11_genes.201606.pep.format.fasta -d ath_pep
 ./diamond makedb --in nr.fasta -d nr
-InterPro DB
+```
 
-download InterPro DB to /data/share/interpro
+### InterPro DB
 
-Install eggnog-mapper
+Download InterPro DB to `/data/share/interpro`.
 
-download eggnog-mapper to /data/share/eggnog-mapper
+### Install eggnog-mapper
 
-cd /data/share/eggnog-mapper 
+Download eggnog-mapper to `/data/share/eggnog-mapper`.
+
+```bash
+cd /data/share/eggnog-mapper
 sudo python3 setup.py install
-Install the pipeline
+```
 
+## Install the pipeline
+
+```bash
 git clone https://github.com/fjl23/CGD_annotation-pipeline.git
 cd CGD_annotation-pipeline
-Install iTAK
+```
 
+## Install iTAK
+
+```bash
 git clone https://github.com/kentnf/iTAK.git
-Install AHRD
+```
 
+## Install AHRD
+
+```bash
 git clone https://github.com/groupschoof/AHRD.git
-Install python (>=3.8)
+```
 
+## Install Python (>=3.8)
+
+```bash
 sudo apt-get install python3 python3-dev
-Install JRE & Perl
+```
 
-sudo apt install default-jre openjdk-11-jre-headless bioperl libbio-perl-perl build-essential cpanminus 
+## Install JRE & Perl
+
+```bash
+sudo apt install default-jre openjdk-11-jre-headless bioperl libbio-perl-perl build-essential cpanminus
 sudo cpanm Bio::SearchIO::blastxml
-setup env path
+```
 
+## Setup env path
+
+```bash
 export PATH=$(pwd):$(pwd)/iTAK:$PATH
-run this pipeline
+```
 
-Make sure there is a protein.fa file in the current directory
+## Run this pipeline
 
-hpg_anno.pl 
+Make sure there is a `protein.fa` file in the current directory.
+
+```bash
+hpg_anno.pl
+```
