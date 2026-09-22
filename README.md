@@ -29,8 +29,8 @@ sudo python3 setup.py install
 ## Install the pipeline
 
 ```bash
-git clone https://github.com/fjl23/CGD_annotation-pipeline.git
-cd CGD_annotation-pipeline
+git clone https://github.com/quorrenth/AGD_annotation-pipeline.git
+cd AGD_annotation-pipeline
 ```
 
 ## Install iTAK
